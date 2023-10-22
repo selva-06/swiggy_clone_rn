@@ -1,72 +1,110 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import {View, Text, Image} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, Dimensions } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-
+import { StyleSheet } from 'react-native';
+import { mdata } from './screens/data';
 const MyCarousel = () => {
-  const data = [
-    {
-      text: 'Field 1',
-      lines: ['- yellow background text', '- hi', '- bye'],
-      image: require('./assets/img.png'),
-    },
-    {
-      text: 'Field 2',
-      lines: [
-        '- Another field',
-        '- With different text',
-        '- And a different image',
-      ],
-      image: require('./assets/mealoffer.png'),
-    },
-    {
-      text: 'Field 3',
-      lines: ['- Third field', '- More text', '- And a third image'],
-      image: require('./assets/uoffer.png'),
-    },
-  ];
+  const data = mdata;
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const renderItem = ({item}) => {
+  const onSnapToItem = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const renderItem = ({ item }) => {
     return (
       <View
         style={{
           backgroundColor: 'lightgrey',
-          borderRadius: 5,
+          borderRadius: 10,
           overflow: 'hidden',
-          height: 100,
+          height: 200,
+          width: "100%",
+          // width: Dimensions.get('window').width - 40,
           paddingHorizontal: 10,
-          margin: 5,
+          margin: 10,
           flexDirection: 'row',
           alignItems: 'center',
         }}>
         <View
           style={{
             backgroundColor: 'yellow',
-            borderTopLeftRadius: 5,
-            borderTopRightRadius: 5,
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 10,
             paddingHorizontal: 5,
           }}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: 'black'}}>
+          <Text style={{ fontSize: 18, fontWeight: 'bold', color: 'black' }}>
             {item.text}
           </Text>
         </View>
         <Text>{item.lines.join('\n')}</Text>
         <Image
           source={item.image}
-          style={{width: 40, height: 40, marginLeft: 5}}
+          style={{ width: 40, height: 40, marginLeft: 5 }}
         />
       </View>
     );
   };
 
   return (
-    <Carousel
-      data={data}
-      renderItem={renderItem}
-      sliderWidth={300}
-      itemWidth={300}
-    />
+    <View style={styles.container}>
+      <Carousel
+        data={data}
+        renderItem={renderItem}
+        sliderWidth={Dimensions.get('window').width}
+        itemWidth={Dimensions.get('window').width - 40}
+        onSnapToItem={onSnapToItem}
+      />
+      <View style={styles.labelsContainer}>
+
+        {data.map((_, i) => (
+          <View
+            key={i}
+            style={[
+              styles.dot,
+              {
+                backgroundColor: i === currentIndex ? '#000' : '#ccc',
+              }
+            ]}>
+            {i === currentIndex && (
+              <Text style={styles.dotText}>{i + 1}/4</Text>
+            )}
+          </View>
+        ))}
+      </View>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  labelsContainer: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 10,
+    justifyContent: 'center',
+    marginTop: 50,
+    marginBottom: 0,
+  },
+  dot: {
+    width: 20,
+    height: 13,
+    borderRadius: 8,
+    marginHorizontal: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 1, // Add this line
+    marginBottom: 0,
+  },
+  dotText: {
+    color: '#fff',
+    fontSize: 10,
+  },
+});
 
 export default MyCarousel;

@@ -6,6 +6,7 @@ import {
   Text,
   FlatList,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import FontAwesome, {
   SolidIcons,
@@ -16,6 +17,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import MyCarousel from './Carousel';
 import {YellowBox} from 'react-native';
 YellowBox.ignoreWarnings(['ViewPropTypes']);
+import {scrolldata} from './screens/data';
+import LinearGradient from 'react-native-linear-gradient';
 
 const App = () => {
   const [searchText, setSearchText] = useState('');
@@ -36,9 +39,50 @@ const App = () => {
   const handleGoPress = () => {
     console.log('Navigating to:', address);
   };
+  const [showBanner, setShowBanner] = useState(true);
+  const handleScroll = event => {
+    const offsetY = event.nativeEvent.contentOffset.y;
+    setShowBanner(offsetY <= 0); // Show banner only if scrolled up
+  };
 
   return (
-    <View style={{backgroundColor: 'white', flex: 1}}>
+    <ScrollView style={{backgroundColor: 'white', flex: 1}}>
+      <LinearGradient
+        colors={['#ADD8E6', 'white']}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: 200,
+        }}>
+        <Image
+          source={require('./assets/offer.png')} // Replace with your top left image
+          style={{
+            position: 'absolute',
+            top: 10,
+            left: 10,
+            width: 60,
+            height: 80,
+            resizeMode: 'cover',
+            opacity: 0.5, // Adjust the opacity as needed
+          }}
+        />
+        <Image
+          source={require('./assets/offer.png')} // Replace with your top right image
+          style={{
+            position: 'absolute',
+            top: 10,
+            right: 10,
+            width: 60,
+            height: 80,
+            resizeMode: 'cover',
+            opacity: 0.7, // Adjust the opacity as needed
+          }}
+        />
+      </LinearGradient>
+
       <Image
         source={require('./assets/location.png')} // Adjust the path and filename
         style={{
@@ -219,10 +263,84 @@ const App = () => {
           />
         </View>
       </View>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <MyCarousel />
       </View>
-    </View>
+      <View style={{margin: 10, marginTop: 50}}>
+        <Text
+          style={{
+            fontSize: 18,
+            fontWeight: 'bold',
+            color: 'black',
+            marginBottom: 5,
+          }}>
+          What's on your mind
+        </Text>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{flexDirection: 'row'}}>
+          {scrolldata.map((item, index) => (
+            <Image
+              key={index}
+              source={item.image}
+              style={{
+                width: item.width,
+                height: item.height,
+                marginRight: item.marginRight,
+              }}
+            />
+          ))}
+        </ScrollView>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{flexDirection: 'row'}}>
+          {scrolldata.map((item, index) => (
+            <Image
+              key={index}
+              source={item.image}
+              style={{
+                width: item.width,
+                height: item.height,
+                marginRight: item.marginRight,
+              }}
+            />
+          ))}
+        </ScrollView>
+      </View>
+      <LinearGradient
+        colors={['rgba(135, 206, 250, 0.1)', 'rgba(135, 206, 250, 0.5)']}
+        style={{
+          padding: 10,
+          margin: 10,
+          borderRadius: 5,
+          width: '90%',
+          alignSelf: 'center',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}>
+        <View style={{flex: 1}}>
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              marginBottom: 5,
+              color: 'black',
+            }}>
+            Navaratri Sale & Offers
+          </Text>
+          <Text style={{fontSize: 16, color: 'black'}}>
+            Get amazing discounts and special offers during this Navaratri
+            season.
+          </Text>
+        </View>
+        <Image
+          source={require('./assets/offer.png')} // Adjust the path and filename
+          style={{width: 100, height: 100, resizeMode: 'cover'}}
+        />
+      </LinearGradient>
+    </ScrollView>
   );
 };
 
