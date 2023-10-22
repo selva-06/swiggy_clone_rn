@@ -31,32 +31,75 @@ const scrolldata = [
     image: require('../assets/img.png'),
     width: 100,
     height: 100,
-    marginRight: 10,
+    marginRight: 60,
   },
   {
     image: require('../assets/mealoffer.png'),
     width: 100,
     height: 100,
-    marginRight: 10,
+    marginRight: 60,
   },
   {
     image: require('../assets/uoffer.png'),
     width: 100,
     height: 100,
-    marginRight: 10,
+    marginRight: 60,
   },
   {
     image: require('../assets/img.png'),
     width: 100,
     height: 100,
-    marginRight: 10,
+    marginRight: 60,
   },
   {
     image: require('../assets/img.png'),
     width: 100,
     height: 100,
-    marginRight: 10,
+    marginRight: 60,
   },
+  {
+    image: require('../assets/mealoffer.png'),
+    width: 100,
+    height: 100,
+    marginRight: 60,
+  },
+  {
+    image: require('../assets/uoffer.png'),
+    width: 100,
+    height: 100,
+    marginRight: 60,
+  },
+  {
+    image: require('../assets/img.png'),
+    width: 100,
+    height: 100,
+    marginRight: 60,
+  },
+  {
+    image: require('../assets/img.png'),
+    width: 100,
+    height: 100,
+    marginRight: 60,
+  },
+  {
+    image: require('../assets/mealoffer.png'),
+    width: 100,
+    height: 100,
+    marginRight: 60,
+  },
+  {
+    image: require('../assets/uoffer.png'),
+    width: 100,
+    height: 100,
+    marginRight: 60,
+  },
+  {
+    image: require('../assets/img.png'),
+    width: 100,
+    height: 100,
+    marginRight: 60,
+  },
+
 ];
 
 export {mdata, scrolldata};
