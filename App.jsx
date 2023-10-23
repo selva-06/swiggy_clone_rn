@@ -505,6 +505,39 @@ const App = () => {
           />
         </>
       )}
+      <View style={styles.borderContainer}>
+        <View style={styles.borderLine} />
+        <TouchableOpacity style={styles.seeMoreButton}>
+          <Text style={styles.seeMoreText}>See more restaurants</Text>
+          <Text style={styles.vSymbol}>&gt;</Text>
+        </TouchableOpacity>
+        <View style={styles.borderLine} />
+      </View>
+      <View style={styles.scrollcontainer}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.scrollContent}>
+          <TouchableOpacity style={styles.touchableOpacity}>
+            <Text style={styles.text}>Text 1</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity}>
+            <Text style={styles.text}>Text 2</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity}>
+            <Text style={styles.text}>Text 3</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity}>
+            <Text style={styles.text}>Text 4</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity}>
+            <Text style={styles.text}>Text 5</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity}>
+            <Text style={styles.text}>Text 6</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </View>
     </ScrollView>
   );
 };
@@ -584,5 +617,50 @@ const styles = {
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: {width: 1, height: 1},
     textShadowRadius: 5,
+  },
+  borderContainer: {
+    marginTop: 30, // Adjust as needed
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  borderLine: {
+    width: '100%',
+    height: 1,
+    backgroundColor: 'black',
+  },
+  seeMoreButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  seeMoreText: {
+    marginHorizontal: 10,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  vSymbol: {
+    fontSize: 20,
+    color: 'black',
+  },
+  scrollcontainer: {
+    flex: 1,
+    marginTop: 30, // Adjust as needed
+    backgroundColor: '#fff',
+    marginBottom: 10,
+  },
+  scrollContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  touchableOpacity: {
+    backgroundColor: '#3498db',
+    borderRadius: 20, // Adjust as needed
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    margin: 5,
+  },
+  text: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 };
