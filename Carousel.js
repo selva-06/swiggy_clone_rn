@@ -57,7 +57,6 @@ const MyCarousel = () => {
         onSnapToItem={onSnapToItem}
       />
       <View style={styles.labelsContainer}>
-
         {data.map((_, i) => (
           <View
             key={i}
@@ -85,25 +84,20 @@ const styles = StyleSheet.create({
   },
   labelsContainer: {
     flexDirection: 'row',
-    position: 'absolute',
-    bottom: 10,
     justifyContent: 'center',
-    marginTop: 50,
-    marginBottom: 0,
+    marginTop: 10, // Adjust this value to control the distance between carousel and dots
   },
   dot: {
-    width: 20,
-    height: 13,
+    width: 16,
+    height: 10,
     borderRadius: 8,
     marginHorizontal: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 1, // Add this line
-    marginBottom: 0,
   },
   dotText: {
     color: '#fff',
-    fontSize: 10,
+    fontSize: 8,
   },
 });
 
