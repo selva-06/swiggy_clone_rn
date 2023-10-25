@@ -40,7 +40,7 @@ const styles = {
     borderColor: '#C0C0C0',
     position: 'relative',
     marginTop: 20,
-    backgroundColor: 'lightgrey',
+    backgroundColor: '#e6e6e6',
   },
   textInput: {
     height: 20,
@@ -62,7 +62,7 @@ const styles = {
     position: 'absolute',
     right: 35,
     zIndex: 1,
-  },
+},
   micIcon: {
     width: 30,
     height: 20,

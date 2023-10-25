@@ -6,23 +6,23 @@ const AddressComponent = () => {
   return (
     <View>
       <Image
-        source={require('./assets/location.png')}
+        source={require('./assets/address.png')}
         style={{
-          width: 20,
-          height: 15,
+          width: "12%",
+          height: "35%",
           position: 'absolute',
-          left: 5, // Adjusted from left to right
           zIndex: 1,
           resizeMode: 'contain',
-          marginTop: 17,
+          marginTop: 16,
         }}
       />
       <Text style={styles.addressTitle}>
         Address{' '}
-        <Image
+        <Text>{'\u25BC'}</Text>
+        {/* <Image
           source={require('./assets/drop.png')}
           style={styles.dropImage}
-        />{' '}
+        />{' '} */}
       </Text>
       <Text style={styles.addressText}>
         445/2/1, Anna Cross Street, Ranipet - 632401
@@ -38,14 +38,14 @@ const styles = {
     fontWeight: 'bold',
     color: 'black',
     marginLeft: 30,
-    marginTop: 5,
-  },
-  dropImage: {
-    width: 30,
-    height: 25,
-    zIndex: 1,
-    marginTop: 10,
-  },
+    marginTop: 11,
+},
+//   dropImage: {
+//     width: 30,
+//     height: 25,
+//     zIndex: 1,
+//     marginTop: 10,
+//   },
   addressText: {
     color: 'grey',
     marginLeft: 15,

@@ -19,7 +19,12 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import MyCarousel from './Carousel';
 import {YellowBox} from 'react-native';
 YellowBox.ignoreWarnings(['ViewPropTypes']);
-import {scrolldata, restaurantData, itemsData} from './screens/data';
+import {
+  scrolldata,
+  restaurantData,
+  itemsData,
+  trustedData,
+} from './screens/data';
 import LinearGradient from 'react-native-linear-gradient';
 import GradientComponent from './Gradient';
 import AddressComponent from './AddressComponent';
@@ -32,6 +37,7 @@ import ItemsRow from './ItemsRow';
 import SeeMoreComponent from './SeeMore';
 import ScrollComponent from './ScrollCOmponenttouch';
 import RestaurantData from './RestaurantDataMenuCard';
+import TrustComponent from './TrustComponent';
 const App = () => {
   const [searchText, setSearchText] = useState('');
   const [data, setData] = useState([
@@ -78,6 +84,7 @@ const App = () => {
         />
       </View>
       <MyCarousel />
+      <TrustComponent />
       <MindSection scrolldata={scrolldata} />
       <NavaratriSaleComponent />
       <QuickSelectComponent handleTextClick={handleTextClick} />

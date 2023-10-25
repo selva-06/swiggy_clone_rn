@@ -1,9 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
-import { View, Text, Image, Dimensions } from 'react-native';
+import { View, Text, Image, Dimensions, TouchableOpacity } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import { StyleSheet } from 'react-native';
 import { mdata } from './screens/data';
+
 const MyCarousel = () => {
   const data = mdata;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,49 +12,89 @@ const MyCarousel = () => {
   const onSnapToItem = (index) => {
     setCurrentIndex(index);
   };
+  const stylesArray = [
+    { paddingHorizontal: 10, fontSize: 12, fontWeight: 'bold', color: 'white' ,width: "100%", }, // Style for the first line
+    { fontSize: 14, fontWeight: 'bold', color: 'white' }, // Style for the second line
+    // Add more styles for other lines as needed
+    { fontSize: 16, fontWeight: 'bold', color: 'white' },
+  ];
 
   const renderItem = ({ item }) => {
     return (
       <View
         style={{
-          backgroundColor: 'lightgrey',
+          flex: 1,
+          backgroundColor: item.backgroundColor,
           borderRadius: 10,
           overflow: 'hidden',
           height: 200,
           width: "100%",
-          // width: Dimensions.get('window').width - 40,
           paddingHorizontal: 10,
-          margin: 10,
           flexDirection: 'row',
           alignItems: 'center',
-        }}>
-        <View
-          style={{
-            backgroundColor: 'yellow',
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
-            paddingHorizontal: 5,
+          marginTop: 20,
+          position: 'relative',
+        }}
+      >
+        <Text>
+          <Text style={{
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 20,
           }}>
-          <Text style={{ fontSize: 18, fontWeight: 'bold', color: 'black' }}>
             {item.text}
           </Text>
-        </View>
-        <Text>{item.lines.join('\n')}</Text>
+          <Text>{'\n'}</Text>
+          <Text>{'\n'}</Text>
+
+          <Text style={{
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 14,
+            maxWidth: "100%",
+            flexShrink: 1,
+          }}>{item.lines.join('\n')}</Text>
+                  <Text>{'\n'}</Text>
+                  <Text>{'\n'}</Text>
+                  <Text>{'\n'}</Text>
+                  <Text>{'\n'}</Text>
+
+          <TouchableOpacity style ={{
+            width: "100%",
+            borderWidth: 1,
+            borderColor: 'black',
+            padding: 5,
+            borderRadius: 30,
+            backgroundColor: 'white',
+            alignItems: 'center',
+          }}>
+            <Text style={{color:'black', fontWeight: '800'}}>Order Fast</Text>
+          </TouchableOpacity>
+        </Text>
         <Image
           source={item.image}
-          style={{ width: 40, height: 40, marginLeft: 5 }}
+          style={{
+            width: "50%",
+            height: 150,
+            aspectRatio: 1,
+            resizeMode: 'contain',
+            position: 'absolute',
+            right: 20,
+            top: 30,
+            marginTop: 25,
+          }}
         />
-      </View>
-    );
+        </View>
+        );
   };
-
+  
   return (
     <View style={styles.container}>
       <Carousel
         data={data}
         renderItem={renderItem}
         sliderWidth={Dimensions.get('window').width}
-        itemWidth={Dimensions.get('window').width - 40}
+        itemWidth={Dimensions.get('window').width - 50}
         onSnapToItem={onSnapToItem}
       />
       <View style={styles.labelsContainer}>

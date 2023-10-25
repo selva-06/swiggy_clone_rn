@@ -7,7 +7,7 @@ const TextFieldComponent = ({ text, imagePath }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: 'lightgrey',
+        backgroundColor: '#e6e6e6',
         borderRadius: 5,
         overflow: 'hidden',
         height: '75%',
@@ -43,9 +43,9 @@ const TextFieldComponent = ({ text, imagePath }) => {
       <Image
         source={imagePath}
         style={{
-          width: '100%',
+          width: '70%',
           height: '100%',
-          marginLeft: 7,
+          marginLeft: 5,
           resizeMode: 'cover',
         }}
       />

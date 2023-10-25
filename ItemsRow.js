@@ -39,6 +39,7 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: 10,
+    marginHorizontal: 15,
   },
   itemContainer: {
     width: '30%', // Adjust the width as needed

@@ -4,7 +4,7 @@ import { View, Text, Image, ScrollView } from 'react-native';
 
 const MindSection = ({ scrolldata }) => {
   return (
-    <View style={{ margin: 10, marginTop: 50 }}>
+    <View style={{ margin: 10, marginTop: 20 }}>
       <Text
         style={{
           fontSize: 18,
@@ -35,6 +35,7 @@ const MindSection = ({ scrolldata }) => {
                 marginTop: 20,
                 marginRight: 20,
                 marginBottom: 10,
+                borderRadius: 10,
               }}
             />
             {(index + 1) % 6 === 0 && <View style={{ width: '100%', height: 10 }} />}
