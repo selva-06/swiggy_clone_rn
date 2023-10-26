@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 const NavaratriSaleComponent = () => {
@@ -12,6 +12,7 @@ const NavaratriSaleComponent = () => {
         margin: 10,
         borderRadius: 5,
         width: '90%',
+        height: 100,
         alignSelf: 'center',
         flexDirection: 'row',
         alignItems: 'center',
@@ -20,7 +21,7 @@ const NavaratriSaleComponent = () => {
       <View style={{ flex: 1 }}>
         <Text
           style={{
-            fontSize: 20,
+            fontSize: 14,
             fontWeight: 'bold',
             marginBottom: 5,
             color: 'black',
@@ -28,13 +29,14 @@ const NavaratriSaleComponent = () => {
         >
           Navaratri Sale & Offers
         </Text>
-        <Text style={{ fontSize: 16, color: 'black' }}>
+        <Text style={{ fontSize: 12, color: 'black' }}>
           Get amazing discounts and special offers during this Navaratri season.
         </Text>
+        <TouchableOpacity><Text style={{ fontSize: 12, color: 'black', borderColor: 'white', borderWidth:1,backgroundColor: 'white', width: 70, paddingLeft: 5, borderRadius: 7, marginTop: 10, }}>Order Fast</Text></TouchableOpacity>
       </View>
       <Image
-        source={require('./assets/offer.png')} // Adjust the path and filename
-        style={{ width: 100, height: 100, resizeMode: 'cover' }}
+        source={require('./assets/dosa.png')} // Adjust the path and filename
+        style={{ width: 100, height: 100, resizeMode: 'contain' }}
       />
     </LinearGradient>
   );

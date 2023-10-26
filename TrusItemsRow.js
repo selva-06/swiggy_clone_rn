@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, Text, Image, ImageBackground} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import { StyleSheet } from 'react-native';
 
 const TrusItemsRow = ({ data }) => {
   return (
@@ -8,24 +10,41 @@ const TrusItemsRow = ({ data }) => {
       {data.map((item, index) => (
         <View style={styles.itemWrapper} key={index}>
           <View style={styles.itemContainer}>
-          <ImageBackground source={item.source} style={styles.itemImage}>
-            <View style={styles.labelContainer}>
-              <Image source={require('./assets/save.png')} style={styles.labelImage} />
-            </View>
-            <View style={styles.heartContainer}>
-              <Image source={require('./assets/heart.png')} style={styles.heartImage} />
-            </View>
-            <Text style={styles.adText}>Ad</Text>
-            <Text style={styles.offerPrice}>{item.offerPrice}</Text>
-            </ImageBackground>
+            <ImageBackground source={item.source} style={styles.itemImage}>
+              <View style={styles.labelContainer}>
+                <Image source={require('./assets/save.png')} style={styles.labelImage} />
+              </View>
+              <View style={styles.heartContainer}>
+                <Image source={require('./assets/heart.png')} style={styles.heartImage} />
+              </View>
+              {/* Gradient overlay for adText */}
+                            <LinearGradient
+                colors={['transparent', 'rgba(0, 0, 0, 0.5)']} // Set your gradient colors
+                style={styles.gradientOverlay}
+              >
+                <View style={styles.overlayContent}>
+                  <Text style={styles.adText}>Ad</Text>
+                </View>              
+              </LinearGradient>
 
+              <LinearGradient
+                colors={['transparent', 'rgba(0, 0, 0, 0.5)']} // Set your gradient colors
+                style={styles.gradientOverlay}
+              >
+                <View style={styles.overlayContent}>
+                  <Text style={styles.offerPrice}>{item.offerPrice}</Text>
+                </View>
+              </LinearGradient>
+            </ImageBackground>
           </View>
           <View style={styles.itemDetails}>
             <Text style={styles.itemName}>{item.hotelName}</Text>
             <View style={styles.ratingsContainer}>
               <Image source={require('./assets/rate.png')} style={styles.starImage} />
               <Text style={styles.itemRate}>{item.ratings}</Text>
+              <Text style={styles.itemMin}>{' . '}{item.min}</Text>
             </View>
+            <Text style={styles.itemType}>{item.type}</Text>
           </View>
         </View>
       ))}
@@ -47,8 +66,8 @@ const styles = {
       },
       heartContainer: {
         position: 'absolute',
-        top: 0,
-        right: 0,
+        top: 3,
+        right: 6,
         zIndex: 1,
       },
       heartImage: {
@@ -68,49 +87,64 @@ const styles = {
     marginBottom: 0,
   },
   itemContainer: {
-    borderRadius: 10,
+    borderRadius: 20,
     overflow: 'hidden',
     marginBottom: 10,
     position: 'relative',
   },
   itemImage: {
     width: '100%',
-    height: 150,
+    height: 130,
     resizeMode: 'center',
     borderColor: 'white', // Add border color here
     borderWidth: 1, // 
   },
-  adText: {
+  gradientOverlay: {
     position: 'absolute',
-    bottom: 10,
-    right: 10,
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 50, // Adjust this value to control the height of the gradient overlay
+    justifyContent: 'flex-end',
+  },
+  overlayContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+  },
+  adText: {
     color: 'white',
-    padding: 5,
-    borderRadius: 5,
     fontWeight: 'bold',
+    position: 'absolute',
+    bottom: 0,
+    right: 10,
   },
   offerPrice: {
-    position: 'absolute',
-    bottom: 10,
-    left: 10,
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
     color: 'white',
-    padding: 5,
-    borderRadius: 5,
     fontWeight: 'bold',
+    position: 'absolute',
+    bottom: 0,
+    left: 10,
   },
   itemDetails: {
     backgroundColor: 'white',
   },
   itemName: {
-    fontSize: 16,
+    fontSize: 13,
     fontWeight: 'bold',
     color: 'black',
   },
   itemRate: {
-    fontSize: 14,
-    color: 'green',
+    fontSize: 10,
+    color: 'black',
+  },
+  itemMin: {
+    fontSize: 10,
+    color: 'black',
+  },
+  itemType: {
+    fontSize: 10,
+    color: '#919091',
   },
   ratingsContainer: {
     flexDirection: 'row',

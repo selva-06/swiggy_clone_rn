@@ -5,16 +5,51 @@ import { View, TouchableOpacity, Text } from 'react-native';
 const QuickSelectComponent = ({ handleTextClick }) => {
   return (
     <View>
-      <Text style={styles.headtext}>Quick select</Text>
+      <Text style={styles.headtext}>Quick picks for you</Text>
       <View style={styles.rowContainer}>
-        <TouchableOpacity onPress={() => handleTextClick(1)}>
-          <Text style={styles.clickableText}>Text 1</Text>
+      <TouchableOpacity style={{width: "25%", borderWidth: 1,
+    borderColor: 'black',
+    padding: 5,
+    marginTop: 10,
+    borderRadius: 30,
+    backgroundColor: 'black',
+    alignItems: 'center', 
+    marginLeft: 8, // Center the content horizontally
+
+}} onPress={() => handleTextClick(1)}>
+          <Text style={{fontSize: 12,
+    fontWeight: 'bold',
+    color: 'white'}}>Get it Quickly</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTextClick(2)}>
-          <Text style={styles.clickableText}>Text 2</Text>
+        <TouchableOpacity style={{width: "20%", borderWidth: 1,
+    borderColor: 'black',
+    padding: 5,
+    marginTop: 10,
+    borderRadius: 30,
+    backgroundColor: 'black',
+    alignItems: 'center', 
+    marginLeft: 8, // Center the content horizontally
+
+}}
+        onPress={() => handleTextClick(2)}>
+          <Text style={{fontSize: 12,
+    fontWeight: 'bold',
+    color: 'white'}}> Pure Veg </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTextClick(3)}>
-          <Text style={styles.clickableText}>Text 3</Text>
+        <TouchableOpacity style={{width: "30%", borderWidth: 1,
+    borderColor: 'black',
+    padding: 5,
+    marginTop: 10,
+    borderRadius: 30,
+    backgroundColor: 'black',
+    alignItems: 'center', 
+    marginLeft: 8, // Center the content horizontally
+
+}}
+         onPress={() => handleTextClick(3)}>
+          <Text style={{fontSize: 12,
+    fontWeight: 'bold',
+    color: 'white'}}> Popular Brands </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -23,19 +58,25 @@ const QuickSelectComponent = ({ handleTextClick }) => {
 
 const styles = {
     clickableText: {
+      width: "100%", borderWidth: 1,
+    borderColor: 'black',
+    padding: 5,
+    marginTop: 10,
+    borderRadius: 30,
+    backgroundColor: 'black',
+    alignItems: 'center', 
+    marginLeft: 8,
       fontSize: 18,
       fontWeight: 'bold',
       marginBottom: 10,
       color: 'blue',
-      borderRadius: 3,
-      borderWidth: 2,
-      borderColor: 'lightgrey',
     },
     headtext: {
-      fontSize: 22,
-      color: 'black',
-      marginHorizontal: 30,
-      marginBottom: 20,
+      fontSize: 18,
+          fontWeight: 'bold',
+          color: 'black',
+          marginBottom: 8,
+          marginHorizontal: 10,
     },
     itemsRow: {
       flexDirection: 'row',
@@ -64,8 +105,7 @@ const styles = {
     rowContainer: {
       flexDirection: 'row',
       marginBottom: 10,
-      marginHorizontal: 30,
-      justifyContent: 'space-between',
+      // marginHorizontal: 30,
     },
     overlay: {
       position: 'absolute',

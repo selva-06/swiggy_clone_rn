@@ -91,8 +91,8 @@ const App = () => {
 
       {selectedText >= 1 && selectedText <= 3 && (
         <>
-          <ItemsRow images={itemsData[selectedText - 1].slice(0, 3)} />
-          <ItemsRow images={itemsData[selectedText - 1].slice(3, 6)} />
+          <ItemsRow data={itemsData[selectedText - 1].slice(0, 3)} />
+          <ItemsRow data={itemsData[selectedText - 1].slice(3, 6)} />
         </>
       )}
       <SeeMoreComponent />

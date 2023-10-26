@@ -13,7 +13,7 @@ const MindSection = ({ scrolldata }) => {
           marginBottom: 5,
         }}
       >
-        What's on your mind
+        What's on your mind, Leo?
       </Text>
       <ScrollView
         horizontal
@@ -26,6 +26,7 @@ const MindSection = ({ scrolldata }) => {
       >
         {scrolldata.map((item, index) => (
           <React.Fragment key={index}>
+                <View style={{ alignItems: 'center' }}>
             <Image
               source={item.image}
               style={{
@@ -36,8 +37,13 @@ const MindSection = ({ scrolldata }) => {
                 marginRight: 20,
                 marginBottom: 10,
                 borderRadius: 10,
+                overflow: 'hidden', // Clip the content to container boundaries
+                resizeMode: 'contain',
+                backgroundColor: 'white'
               }}
             />
+            <Text style={{ textAlign: 'center', fontWeight: 'bold', color: '#919091' }}>{item.name}</Text>
+    </View>
             {(index + 1) % 6 === 0 && <View style={{ width: '100%', height: 10 }} />}
           </React.Fragment>
         ))}

@@ -1,16 +1,50 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Image, Text} from 'react-native';
+import { View, Text, Image, ImageBackground} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import { StyleSheet } from 'react-native';
 
-const ItemsRow = ({images}) => {
+const ItemsRow = ({ data }) => {
   return (
     <View style={styles.itemsRow}>
-      {images.map((image, index) => (
-        <View style={styles.itemContainer} key={index}>
-          <Image source={image.source} style={styles.itemImage} />
-          <View style={styles.overlay}>
-            <Text style={styles.offerPrice}>{image.offerPrice}</Text>
-            <Text style={styles.adText}>ad</Text>
+      {data.map((item, index) => (
+        <View style={styles.itemWrapper} key={index}>
+          <View style={styles.itemContainer}>
+            <ImageBackground source={item.source} style={styles.itemImage}>
+              <View style={styles.labelContainer}>
+                <Image source={require('./assets/save.png')} style={styles.labelImage} />
+              </View>
+              <View style={styles.heartContainer}>
+                <Image source={require('./assets/heart.png')} style={styles.heartImage} />
+              </View>
+              {/* Gradient overlay for adText */}
+                            <LinearGradient
+                colors={['transparent', 'rgba(0, 0, 0, 0.5)']} // Set your gradient colors
+                style={styles.gradientOverlay}
+              >
+                <View style={styles.overlayContent}>
+                  <Text style={styles.adText}>Ad</Text>
+                </View>              
+              </LinearGradient>
+
+              <LinearGradient
+                colors={['transparent', 'rgba(0, 0, 0, 0.5)']} // Set your gradient colors
+                style={styles.gradientOverlay}
+              >
+                <View style={styles.overlayContent}>
+                  <Text style={styles.offerPrice}>{item.offerPrice}</Text>
+                </View>
+              </LinearGradient>
+            </ImageBackground>
+          </View>
+          <View style={styles.itemDetails}>
+            <Text style={styles.itemName}>{item.hotelName}</Text>
+            <View style={styles.ratingsContainer}>
+              <Image source={require('./assets/rate.png')} style={styles.starImage} />
+              <Text style={styles.itemRate}>{item.ratings}</Text>
+              <Text style={styles.itemMin}>{' . '}{item.min}</Text>
+            </View>
+            <Text style={styles.itemType}>{item.type}</Text>
           </View>
         </View>
       ))}
@@ -18,81 +52,111 @@ const ItemsRow = ({images}) => {
   );
 };
 
-
 const styles = {
-  clickableText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: 'blue',
-    borderRadius: 3,
-    borderWidth: 2,
-    borderColor: 'lightgrey',
-  },
-  headtext: {
-    fontSize: 22,
-    color: 'black',
-    marginHorizontal: 30,
-    marginBottom: 20,
-  },
+    labelContainer: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        zIndex: 1,
+      },
+      labelImage: {
+        width: 40, // Adjust the width as needed
+        height: 40, // Adjust the height as needed
+        resizeMode: 'contain',
+      },
+      heartContainer: {
+        position: 'absolute',
+        top: 3,
+        right: 6,
+        zIndex: 1,
+      },
+      heartImage: {
+        width: 20, // Adjust the width as needed
+        height: 20, // Adjust the height as needed
+        resizeMode: 'contain',
+      },
   itemsRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: 10,
-    marginHorizontal: 15,
+    marginHorizontal: 5,
+  },
+  itemWrapper: {
+    width: '30%',
+    marginHorizontal: 5,
+    marginBottom: 0,
   },
   itemContainer: {
-    width: '30%', // Adjust the width as needed
-    borderRadius: 5,
+    borderRadius: 20,
     overflow: 'hidden',
-    shadowColor: 'rgba(0, 0, 0, 0.5)',
-    marginHorizontal: 5, // Add margin here
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 4,
-    elevation: 5,
+    marginBottom: 10,
+    position: 'relative',
   },
   itemImage: {
     width: '100%',
-    height: 150,
-    resizeMode: 'cover',
+    height: 130,
+    resizeMode: 'center',
+    borderColor: 'white', // Add border color here
+    borderWidth: 1, // 
   },
-  rowContainer: {
-    flexDirection: 'row',
-    marginBottom: 10,
-    marginHorizontal: 30,
-    justifyContent: 'space-between',
-  },
-  overlay: {
+  gradientOverlay: {
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
-    height: 50, // Adjust the height of the overlay here
+    height: 50, // Adjust this value to control the height of the gradient overlay
     justifyContent: 'flex-end',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
-    padding: 10,
   },
-  offerPrice: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: 'white',
-    textShadowColor: 'rgba(0, 0, 0, 0.5)',
-    textShadowOffset: {width: 1, height: 1},
-    textShadowRadius: 5,
+  overlayContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
   },
   adText: {
-    position: 'absolute',
-    bottom: 5,
-    right: 5,
-    fontSize: 16,
     color: 'white',
-    textShadowColor: 'rgba(0, 0, 0, 0.5)',
-    textShadowOffset: {width: 1, height: 1},
-    textShadowRadius: 5,
+    fontWeight: 'bold',
+    position: 'absolute',
+    bottom: 0,
+    right: 10,
   },
+  offerPrice: {
+    color: 'white',
+    fontWeight: 'bold',
+    position: 'absolute',
+    bottom: 0,
+    left: 10,
+  },
+  itemDetails: {
+    backgroundColor: 'white',
+  },
+  itemName: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  itemRate: {
+    fontSize: 10,
+    color: 'black',
+  },
+  itemMin: {
+    fontSize: 10,
+    color: 'black',
+  },
+  itemType: {
+    fontSize: 10,
+    color: '#919091',
+  },
+  ratingsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  starImage: {
+    width: 20,
+    height: 20,
+    resizeMode: 'contain',
+    marginRight: 5,
+  },
+
 };
+
 export default ItemsRow;
