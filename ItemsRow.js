@@ -125,6 +125,7 @@ const styles = {
     position: 'absolute',
     bottom: 0,
     left: 10,
+    width: 40,
   },
   itemDetails: {
     backgroundColor: 'white',

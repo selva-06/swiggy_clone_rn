@@ -77,14 +77,14 @@ const styles = StyleSheet.create({
     textShadowRadius: 5,
   },
   borderContainer: {
-    marginTop: 30, // Adjust as needed
+    marginTop: 20, // Adjust as needed
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 0,
   },
   borderLine: {
     width: '100%',
     height: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#e6e6e6',
   },
   seeMoreButton: {
     flexDirection: 'row',
@@ -92,16 +92,18 @@ const styles = StyleSheet.create({
   },
   seeMoreText: {
     marginHorizontal: 10,
-    color: 'black',
+    color: 'orange',
     fontWeight: 'bold',
+    marginTop: 8,
+    marginBottom: 8,
   },
   vSymbol: {
     fontSize: 20,
-    color: 'black',
+    color: 'orange',
   },
   scrollcontainer: {
     flex: 1,
-    marginTop: 30, // Adjust as needed
+    marginTop: 10, // Adjust as needed
     backgroundColor: '#fff',
     marginBottom: 10,
   },
@@ -110,16 +112,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   touchableOpacity: {
-    backgroundColor: '#3498db',
-    borderRadius: 20, // Adjust as needed
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-    margin: 5,
+    // width: 75, borderWidth: 1,
+    // borderColor: '#e6e3e6',
+    // padding: 5,
+    // marginTop: 10,
+    // borderRadius: 30,
+    // backgroundColor: 'white',
+    // alignItems: 'center', 
+    // marginLeft: 8, 
   },
   text: {
-    color: '#fff',
-    fontSize: 16,
+    borderWidth: 1,
+    borderColor: '#e6e3e6',
+    padding: 5,
+    marginTop: 10,
+    borderRadius: 30,
+    backgroundColor: 'white',
+    alignItems: 'center', 
+    marginLeft: 8,
+    fontSize: 12,
     fontWeight: 'bold',
+    color: 'black'
   },
   restaurantInfo: {
     padding: 20,
@@ -138,13 +151,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: 'hidden',
     position: 'relative',
+    height: 135,
+    resizeMode: 'contain',
   },
   resitemImage: {
     width: 100, // Adjust as needed
-    height: 100, // Adjust as needed
+    height: 135, // Adjust as needed
     resizeMode: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'relative'
   },
   resshadow: {
     position: 'absolute',
@@ -170,7 +186,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   resitemName: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
     color: 'black',
   },
@@ -181,7 +197,97 @@ const styles = StyleSheet.create({
   },
   resitemDescription: {
     fontSize: 14,
+    color: 'grey',
+  },
+  heartContainer: {
+    position: 'absolute',
+    top: 3,
+    right: 6,
+    zIndex: 1,
+  },
+  heartImage: {
+    width: 20, // Adjust the width as needed
+    height: 20, // Adjust the height as needed
+    resizeMode: 'contain',
+  },
+  gradientOverlay: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 80, // Adjust this value to control the height of the gradient overlay
+    justifyContent: 'flex-end',
+  },
+  gradientTop: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 20, // Adjust this value to control the height of the gradient overlay
+    justifyContent: 'flex-end',
+  },
+  overlayContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+  },
+  resadText: {
+    color: 'white',
+    fontWeight: 'bold',
+    position: 'absolute',
+    bottom: 0,
+    right: 10,
+  },
+  resofferPrice: {
+    color: 'white',
+    fontWeight: 'bold',
+    position: 'absolute',
+    bottom: 0,
+    left: 10,
+    fontSize: 10,
+    width: 80,
+  },
+  labelContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    zIndex: 1,
+  },
+  labelImage: {
+    width: 40, // Adjust the width as needed
+    height: 40, // Adjust the height as needed
+    resizeMode: 'contain',
+  },
+  itemRate: {
+    fontSize: 10,
     color: 'black',
   },
+  itemMin: {
+    fontSize: 10,
+    color: 'black',
+  },
+  itemType: {
+    fontSize: 10,
+    color: '#919091',
+  },
+  ratingsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  starImage: {
+    width: 20,
+    height: 20,
+    resizeMode: 'contain',
+    marginRight: 5,
+  },
+  dotImage: {
+    width: 20,
+    height: 20,
+    resizeMode: 'contain',
+    marginLeft: 50,
+    position: 'absolute',
+    right: 0,
+ },
+
 });
 export default styles;

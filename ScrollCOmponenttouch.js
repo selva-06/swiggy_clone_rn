@@ -10,22 +10,34 @@ const ScrollComponent = () => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}>
         <TouchableOpacity style={styles.touchableOpacity}>
-          <Text style={styles.text}>Text 1</Text>
+          <Text style={styles.text}>Filter</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.touchableOpacity}>
-          <Text style={styles.text}>Text 2</Text>
+          <Text style={styles.text}>Sort by</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.touchableOpacity}>
-          <Text style={styles.text}>Text 3</Text>
+          <Text style={styles.text}>Fast Delivery</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.touchableOpacity}>
-          <Text style={styles.text}>Text 4</Text>
+          <Text style={styles.text}>Cuisines</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.touchableOpacity}>
-          <Text style={styles.text}>Text 5</Text>
+          <Text style={styles.text}>New on Swiggy</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.touchableOpacity}>
-          <Text style={styles.text}>Text 6</Text>
+          <Text style={styles.text}>Ratings 4.0+</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.touchableOpacity}>
+          <Text style={styles.text}>Pure Veg</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.touchableOpacity}>
+          <Text style={styles.text}>Offers</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.touchableOpacity}>
+          <Text style={styles.text}>Rs. 300-Rs. 600</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.touchableOpacity}>
+          <Text style={styles.text}>Less than Rs. 300</Text>
         </TouchableOpacity>
       </ScrollView>
   );
