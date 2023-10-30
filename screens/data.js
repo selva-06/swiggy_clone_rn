@@ -3,7 +3,7 @@ const mdata = [
   {
     text: 'Match Mania 20%Off',
     lines: ['Enjoy ICC CWC23 matches with KFC'],
-    image: require('../assets/match.png'),
+    image: require('../assets/burgerC.jpg'),
     backgroundColor: '#af18f0',
   },
   {
@@ -11,20 +11,20 @@ const mdata = [
     lines: [
       'Its time to have a coffee date flat 10% off at Leo Cafe',
     ],
-    image: require('../assets/leo.png'),
+    image: require('../assets/bri.jpg'),
     backgroundColor: '#e8153c',
 
   },
   {
     text: 'Kaithi Briyani',
     lines: ['Gear up fellow prisoners its time to meet Dilli for a feast'],
-    image: require('../assets/briyani.png'),
+    image: require('../assets/car2.png'),
     backgroundColor: '#6cbfd4',
   },
   {
     text: 'Navaratri Cravings',
     lines: ['Mouth watering delights from Saravana Bhavan for this Dusshera'],
-    image: require('../assets/idli.png'),
+    image: require('../assets/car4.png'),
     backgroundColor: '#ed1874',
   },
 ];

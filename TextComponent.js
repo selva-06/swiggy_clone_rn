@@ -8,11 +8,12 @@ const TextFieldComponent = ({ text, imagePath }) => {
       style={{
         flex: 1,
         backgroundColor: '#e6e6e6',
-        borderRadius: 5,
+        borderRadius: 10,
         overflow: 'hidden',
-        height: '75%',
+        height: 80,
+        width: 75,
         paddingHorizontal: 10,
-        margin: 5,
+        margin: 10,
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 10,
@@ -43,9 +44,8 @@ const TextFieldComponent = ({ text, imagePath }) => {
       <Image
         source={imagePath}
         style={{
-          width: '70%',
+          width: 80,
           height: '100%',
-          marginLeft: 5,
           resizeMode: 'cover',
         }}
       />

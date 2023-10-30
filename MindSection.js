@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 
-const MindSection = ({ scrolldata }) => {
+const MindSection = ({ scrolldata, navigation }) => {
   return (
     <View style={{ margin: 10, marginTop: 20 }}>
       <Text
@@ -27,6 +27,7 @@ const MindSection = ({ scrolldata }) => {
         {scrolldata.map((item, index) => (
           <React.Fragment key={index}>
                 <View style={{ alignItems: 'center' }}>
+                <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Rest')}>
             <Image
               source={item.image}
               style={{
@@ -42,6 +43,7 @@ const MindSection = ({ scrolldata }) => {
                 backgroundColor: 'white'
               }}
             />
+            </TouchableOpacity>
             <Text style={{ textAlign: 'center', fontWeight: 'bold', color: '#919091' }}>{item.name}</Text>
     </View>
             {(index + 1) % 6 === 0 && <View style={{ width: '100%', height: 10 }} />}

@@ -71,22 +71,26 @@ const Appi = ({navigation}) => {
 
   return (
     <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
-      <GradientComponent />
+      {/* <GradientComponent /> */}
       <AddressComponent />
       <SearchComponent searchText={searchText} setSearchText={setSearchText} />
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <TextFieldComponent
-          text={{upperText: 'Under ₹199\n', lowerText: 'Value Meals\n'}}
+          text={{upperText: '', lowerText: ''}}
           imagePath={require('./assets/mealoffer.png')}
         />
         <TextFieldComponent
-          text={{upperText: '', lowerText: 'Offer Zone'}}
+          text={{upperText: '', lowerText: ''}}
           imagePath={require('./assets/uoffer.png')}
         />
+        <TextFieldComponent
+          text={{upperText: '', lowerText: ''}}
+          imagePath={require('./assets/mealoffer.png')}
+        />
       </View>
-      <MyCarousel />
+      <MyCarousel navigation={navigation} />
       <TrustComponent />
-      <MindSection scrolldata={scrolldata} />
+      <MindSection scrolldata={scrolldata} navigation={navigation} />
       <NavaratriSaleComponent />
       <QuickSelectComponent handleTextClick={handleTextClick} />
 
