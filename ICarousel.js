@@ -5,15 +5,20 @@ import LinearGradient from 'react-native-linear-gradient';
 import TextCarousel from './ImageCarousel';
 import SearchComponent from './SearchComponent';
 import ScrollComponent from './ScrollCOmponenttouch';
-const Icarousel = () => {
+import RestaurantData from './RestaurantDataMenuCard';
+import { menuData, restaurantData } from './screens/data';
+import MenuRest from './MenuRest';
+const Icarousel = ({navigation}) => {
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor: 'white'}}>
     <View style = {{backgroundColor:'rgba(128, 128, 128, 0.3)', borderBottomEndRadius: 40, borderBottomLeftRadius: 40,}}>
     <View style={styles.container}>
+      <TouchableOpacity onPress={()=>{navigation.navigate('Appi')}}>
       <Image
         style={styles.arrowIcon}
         source={require('./assets/arrow.png')} // Replace with your left arrow icon path
       />
+      </TouchableOpacity>
 
     <View style={styles.card}>
       <View style={styles.header}>
@@ -39,19 +44,19 @@ const Icarousel = () => {
         <Text style={styles.itemType}>Coffee, Beverages</Text>
         <View style={styles.horizontalLine} />
     <View style={styles.bcontainer}>
-  <Image source={require('./assets/td1.png')} style={styles.leftImage} />
+  <Image source={require('./assets/td2.jpg')} style={styles.leftImage} />
 
   <View style={styles.lineContainer}>
     <View style={styles.rowContainer}>
       <Text style={{color:'black', marginRight: 10, fontWeight: 'bold'}}>Outlet</Text>
       <Text style={{color:'#6b6b6b'}}>Velacherry</Text>
-      <Text style= {{color:'orange', fontSize: 20}}>{'\u25BC'}</Text>
+      <Text style= {{color:'orange', fontSize: 18}}>{'\u25BC'}</Text>
 
     </View>
     <View style={styles.rowContainer}>
       <Text style={{color:'black', marginRight: 10, fontWeight: 'bold'}}>35 mins</Text>
       <Text style={{color:'#6b6b6b'}}>Delivery to Tidel Park</Text>
-      <Text style= {{color:'orange', fontSize: 20}}>{'\u25BC'}</Text>
+      <Text style= {{color:'orange', fontSize: 18, marginBottom:3}}>{'\u25BC'}</Text>
     </View>
     
   </View>
@@ -63,35 +68,29 @@ const Icarousel = () => {
         </View>
       <LinearGradient
 colors={['transparent', 'rgba(255, 200, 200, 0.5)']}
-style={{borderRadius: 5}}
+style={{borderRadius: 20}}
   >
     <View style={{flexDirection:'row'}}>
     <View style={styles.soverlayContent}>
-      <Text style={{color:'black', marginTop:10, fontWeight:'bold'}}>FREE DELIVERY</Text>
-      <Image
+    <Image
         source={require('./assets/save.png')}
         style={{width: 40, // Adjust the width as needed
         height: 40, // Adjust the height as needed
         resizeMode: 'contain',
-        left: 50,
+        left: 0,
       right:0}}
       />
+      <Text style={{color:'black', marginTop:10, fontWeight:'bold'}}>FREE DELIVERY</Text>
       </View>
     </View>
   </LinearGradient>
     </View>
     <View>
-    <Text style={{color: 'black'}}></Text>
+      <Text>{''}</Text>
     </View>
     </View>
-    {/* <View style={styles.sadditionalText}>
-    <Text style={{ fontSize: 16, color: 'black' }}>hi</Text>
-    <Text style={{ fontSize: 16, color: 'black' }}>hlo</Text>
-  </View> */}
     </View>
     <View style={styles.sadditionalText}>
-    <Text style={{ fontSize: 16, color: 'black' }}>hi</Text>
-    <Text style={{ fontSize: 16, color: 'black' }}>hlo</Text>
     <TextCarousel />
     <View style={{flexDirection:'row', justifyContent: 'center'}}>
     <Image style={styles.micon} source={require('./assets/menu.png')} />
@@ -101,6 +100,7 @@ style={{borderRadius: 5}}
   </View>
   <SearchComponent />
   <ScrollComponent />
+  <MenuRest menuData={menuData}/>
   </ScrollView>
 
 
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   sadditionalText: {
     marginTop: 10,
     padding: 10,
-    backgroundColor: '#f0f0f0', // Optional: You can change the background color
+    backgroundColor: 'white', // Optional: You can change the background color
     borderRadius: 8,
     width: '100%',
   },  
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   leftImage: {
     width: 50,
     height: 50,
-    resizeMode: 'stretch',
+    resizeMode: 'contain',
     marginTop: 20,
   },
   lineContainer: {
@@ -164,24 +164,25 @@ const styles = StyleSheet.create({
   container: {
     position: 'relative',
     // margin: 25,
-    marginLeft: 20,
+    marginLeft: 10,
     marginTop: 10,
   },
   arrowIcon: {
     position: 'relative',
-    top: 0,
+    top: 10,
     left: 0,
     width: 30,
     height: 30,
     zIndex: 1, // Ensures the arrow is above the card
   },
   card: {
+    marginTop: 25,
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 8,
+    borderRadius: 20,
     // margin: 10,
     // marginTop: 30,
-    width: "93%",
+    width: "97%",
     backgroundColor: '#fff',
     elevation: 2, // For shadow on Android
     shadowColor: '#000', // For shadow on iOS
@@ -251,7 +252,7 @@ const styles = StyleSheet.create({
   },
   dottImage: {
     width: 10,
-    height: 10,
+    height: 5,
     resizeMode: 'contain',
     marginTop: 3,
     marginRight: 2,

@@ -286,7 +286,7 @@ import ImageCarousel from "./ImageCarousel";
 const HomeScreen = ({navigation}) =>{
   return(
     <View>
-      <Icarousel />
+      <Icarousel navigation={navigation}/>
       {/* <ImageCarousel /> */}
     </View>
   )

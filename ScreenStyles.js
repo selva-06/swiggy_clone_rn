@@ -146,6 +146,7 @@ const styles = StyleSheet.create({
   restaurantItem: {
     flexDirection: 'row',
     marginBottom: 20,
+    // backgroundColor: 'white',
   },
   resitemImageContainer: {
     borderRadius: 10,
@@ -181,6 +182,27 @@ const styles = StyleSheet.create({
     bottom: 10, // Adjust as needed
     left: 10, // Adjust as needed
   },
+  addToCartContainer: {
+    position: 'absolute',
+    bottom: -5, // Adjust as needed
+    left: 278, // Adjust as needed
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#ededeb',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+  },
+  
+  addToCartText: {
+    color: 'green',
+    fontSize: 15,
+    fontWeight: '900',
+  },
+  
+  cartText: {
+    marginLeft: -6, // Adjust as needed
+  },  
   resitemDetails: {
     flex: 1,
     marginLeft: 10,
@@ -288,6 +310,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
  },
+ bstarImage: {
+  width: 40,
+  height: '40%',
+  resizeMode: 'contain',
+  marginRight: 5,
+},
 
 });
 export default styles;

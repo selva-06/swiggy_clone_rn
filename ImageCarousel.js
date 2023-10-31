@@ -16,7 +16,7 @@ const TextCarousel = () => {
 
   const renderItem = ({ item, index }) => {
     return (
-      <View style={{ padding: 20, alignItems: 'center', borderWidth: 1, borderRadius: 5, borderColor: 'grey', flexDirection: "row", width: "100%" }}>
+      <View style={{ padding: 20, alignItems: 'center', borderWidth: 1, borderRadius: 25, borderColor: 'lightgrey', flexDirection: "row", width: "100%",height:80}}>
         <View style={{ flexDirection: 'row' }}>
           <Image style={styles.icon} source={require('./assets/coffee.png')} />
           <View style={{ flexDirection: 'column' }}>

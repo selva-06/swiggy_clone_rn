@@ -362,4 +362,76 @@ const trustedData = [
     type: 'Food - Madrasi',
   },
 ];
-export {mdata, scrolldata, restaurantData, itemsData, trustedData};
+
+const menuData = [
+  {
+    imageSource: require('../assets/coffeel.jpg'),
+    offerPrice: 'from \u20B9 200',
+    name: 'Chocolate Coffee',
+    rating: '4.5 (67)',
+    price: '\u20B9 170',
+    description: 'Those woofers Im shit scared of that Bad Trip Im shit scared of that Those Chills Im shit scared ',
+    place: 'ECR',
+    texta: '10% OFF',
+    textb: 'UPTO',
+  },
+  {
+    imageSource: require('../assets/bri.jpg'),
+    offerPrice: 'from \u20B9 200',
+    name: 'Chocolate Coffee',
+    rating: '4.5 (67)',
+    price: '\u20B9 170',
+    description: 'Those woofers Im shit scared of that Bad Trip Im shit scared of that Those Chills Im shit scared ',
+    place: 'ECR',
+    texta: '10% OFF',
+    textb: 'UPTO',
+
+  },
+  {
+    imageSource: require('../assets/sweets.png'),
+    offerPrice: 'from \u20B9 200',
+    name: 'Chocolate Coffee',
+    rating: '4.5 (67)',
+    price: '\u20B9 170',
+    description: 'Those woofers Im shit scared of that Bad Trip Im shit scared of that Those Chills Im shit scared ',
+    place: 'ECR',
+    texta: '10% OFF',
+    textb: 'UPTO',
+  },
+  {
+    imageSource: require('../assets/sweets.png'),
+    offerPrice: 'from \u20B9 200',
+    name: 'Chocolate Coffee',
+    rating: '4.5 (67)',
+    price: '\u20B9 170',
+    description: 'Sweets',
+    place: 'ECR',
+    texta: '10% OFF',
+    textb: 'UPTO',
+  },
+  {
+    imageSource: require('../assets/sweets.png'),
+    offerPrice: 'from \u20B9 200',
+    name: 'Chocolate Coffee',
+    rating: '4.5 (67)',
+    price: '\u20B9 170',
+    description: 'Sweets',
+    place: 'ECR',
+    texta: '10% OFF',
+    textb: 'UPTO',
+  },
+  {
+    imageSource: require('../assets/sweets.png'),
+  offerPrice: 'from \u20B9 200',
+  name: 'Chocolate Coffee',
+  rating: '4.5 (67)',
+  price: '\u20B9 170',
+  description: 'Sweets',
+  place: 'ECR',
+  texta: '10% OFF',
+  textb: 'UPTO',
+  },
+  // Add more items as needed
+];
+
+export {mdata, scrolldata, restaurantData, itemsData, trustedData, menuData};
