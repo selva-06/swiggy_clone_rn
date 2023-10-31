@@ -2,12 +2,12 @@
 import React from 'react';
 import { View, TextInput, Image } from 'react-native';
 
-const SearchComponent = ({ searchText, setSearchText }) => {
+const MenuSearch = ({ searchText, setSearchText }) => {
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.textInput}
-        placeholder="Search, Order, Enjoy, Repeat!"
+        placeholder="Search For Dishes!"
         placeholderTextColor={'grey'}
         onChangeText={text => setSearchText(text)}
         value={searchText}
@@ -35,11 +35,10 @@ const styles = {
     margin: 10,
     borderWidth: 1,
     justifyContent: 'space-between',
-    borderRadius: 20,
+    borderRadius: 10,
     padding: 10,
     borderColor: '#f0f0f0',
     position: 'relative',
-    marginTop: 20,
     backgroundColor: '#f0f0f0',
   },
   textInput: {
@@ -48,6 +47,7 @@ const styles = {
     fontSize: 14,
     paddingVertical: 2,
     paddingHorizontal: 0,
+    marginLeft: 90,
     color: 'black', // Set text color to black
   },
   icon: {
@@ -74,4 +74,4 @@ const styles = {
   },
 };
 
-export default SearchComponent;
+export default MenuSearch;

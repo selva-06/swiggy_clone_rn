@@ -365,7 +365,7 @@ const trustedData = [
 
 const menuData = [
   {
-    imageSource: require('../assets/coffeel.jpg'),
+    imageSource: require('../assets/choco.jpg'),
     offerPrice: 'from \u20B9 200',
     name: 'Chocolate Coffee',
     rating: '4.5 (67)',
@@ -376,11 +376,11 @@ const menuData = [
     textb: 'UPTO',
   },
   {
-    imageSource: require('../assets/bri.jpg'),
+    imageSource: require('../assets/iceam.jpg'),
     offerPrice: 'from \u20B9 200',
-    name: 'Chocolate Coffee',
+    name: 'Iced Americano',
     rating: '4.5 (67)',
-    price: '\u20B9 170',
+    price: '\u20B9 200',
     description: 'Those woofers Im shit scared of that Bad Trip Im shit scared of that Those Chills Im shit scared ',
     place: 'ECR',
     texta: '10% OFF',
@@ -388,11 +388,11 @@ const menuData = [
 
   },
   {
-    imageSource: require('../assets/sweets.png'),
+    imageSource: require('../assets/mocha.jpg'),
     offerPrice: 'from \u20B9 200',
-    name: 'Chocolate Coffee',
+    name: 'Mocha',
     rating: '4.5 (67)',
-    price: '\u20B9 170',
+    price: '\u20B9 229',
     description: 'Those woofers Im shit scared of that Bad Trip Im shit scared of that Those Chills Im shit scared ',
     place: 'ECR',
     texta: '10% OFF',

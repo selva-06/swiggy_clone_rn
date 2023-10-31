@@ -6,9 +6,9 @@ import Carousel from 'react-native-snap-carousel';
 
 const TextCarousel = () => {
   const data = [
-    { text: '20% OFF upto Rs 200', lines: ['Enjoy '] },
-    { text: 'hie', lines: ['hom'] },
-    { text: 'hlo', lines: ['u'] },
+    { text: '20% OFF upto Rs 200', lines: ['Use CODE - BLOODY SWEET '], imagesrc: require('./assets/offa.png') },
+    { text: 'Flat \u20B9400 Off', lines: ['First Delivery Deals'], imagesrc:require('./assets/off2.png') },
+    { text: 'Special 20%Off', lines: ['Existing Customer benefits'], imagesrc: require('./assets/uoffer.png') },
     // Add more items as needed
   ];
 
@@ -18,10 +18,10 @@ const TextCarousel = () => {
     return (
       <View style={{ padding: 20, alignItems: 'center', borderWidth: 1, borderRadius: 25, borderColor: 'lightgrey', flexDirection: "row", width: "100%",height:80}}>
         <View style={{ flexDirection: 'row' }}>
-          <Image style={styles.icon} source={require('./assets/coffee.png')} />
+          <Image style={styles.icon} source={item.imagesrc} />
           <View style={{ flexDirection: 'column' }}>
-            <Text style={{ color: 'black' }}>{item.text}</Text>
-            <Text style={{ color: 'black' }}>{item.lines}</Text>
+            <Text style={{ color: 'black', fontWeight:'900', fontSize: 18 }}>{item.text}</Text>
+            <Text style={{ color: 'grey', fontWeight: '500', fontSize: 13 }}>{item.lines}</Text>
           </View>
         </View>
         <View style={{ position: 'absolute', bottom: 10, right: 10, flexDirection: 'row' }}>
@@ -71,14 +71,14 @@ const styles = {
     resizeMode: 'contain'
   },
   dot: {
-    width: 14,
-    height: 10,
-    borderRadius: 5,
+    width: 12,
+    height: 12,
+    borderRadius: 20,
     margin: 5,
   },
   dotText: {
     color: '#fff',
     textAlign: 'center',
-    fontSize: 8,
+    fontSize: 7,
   }
 };

@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
+import { useState } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import TextCarousel from './ImageCarousel';
@@ -8,7 +9,11 @@ import ScrollComponent from './ScrollCOmponenttouch';
 import RestaurantData from './RestaurantDataMenuCard';
 import { menuData, restaurantData } from './screens/data';
 import MenuRest from './MenuRest';
+import MenuSearch from './MenuSearch';
+import MenuScroll from './MenuScroll';
 const Icarousel = ({navigation}) => {
+  const [searchText, setSearchText] = useState('');
+
   return (
     <ScrollView style={{backgroundColor: 'white'}}>
     <View style = {{backgroundColor:'rgba(128, 128, 128, 0.3)', borderBottomEndRadius: 40, borderBottomLeftRadius: 40,}}>
@@ -94,12 +99,12 @@ style={{borderRadius: 20}}
     <TextCarousel />
     <View style={{flexDirection:'row', justifyContent: 'center'}}>
     <Image style={styles.micon} source={require('./assets/menu.png')} />
-      <Text style={{color:'black',marginTop: 20}}>Menu</Text>
+      <Text style={{color:'grey',marginTop: 20, fontSize: 12}}>MENU</Text>
       <Image style={styles.micon} source={require('./assets/menu2.png')} />
     </View>
   </View>
-  <SearchComponent />
-  <ScrollComponent />
+  <MenuSearch searchText={searchText} setSearchText={setSearchText}/>
+  <MenuScroll />
   <MenuRest menuData={menuData}/>
   </ScrollView>
 
@@ -112,6 +117,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     marginLeft: 0,
+    marginTop: 5,
     resizeMode: 'contain'
   },
   sadditionalText: {

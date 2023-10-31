@@ -1,11 +1,37 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
+import { useState } from 'react';
 import { Text, View, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import styles from './ScreenStyles';
 import LinearGradient from 'react-native-linear-gradient';
 import { menuData } from './screens/data';
 const MenuRest = ({ menuData }) => {
+    const ShowMoreText = ({ description }) => {
+        const [showFullText, setShowFullText] = useState(false);
+      
+        const toggleShowText = () => {
+          setShowFullText(!showFullText);
+        };
+      
+        return (
+          <View>
+            <Text style={styles.resitemDescription}>
+              {showFullText ? description : `${description.slice(0, 50)}...`}
+            </Text>
+            {description.length > 50 && (
+              <TouchableOpacity onPress={toggleShowText}>
+                <Text style={{color:'grey', fontWeight: '900'}}>
+                  {showFullText ? 'Less' : 'More'}
+                </Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        );
+      };
+      
+    
   return (
+    
     <>
       {menuData.map((item, index) => (
         <View style={styles.restaurantItem} key={index}>
@@ -14,18 +40,18 @@ const MenuRest = ({ menuData }) => {
                 <Image source={require('./assets/best.jpg')} style={{height: 30, width: '40%', resizeMode: 'contain'}}  />
                 </View>
             <View style={{flexDirection: 'column'}}>
-  <Text style={styles.resitemName}>{item.name}</Text>
-  <Text style={styles.itemRate}>{item.price}</Text>
+  <Text style={styles.mresitemName}>{item.name}</Text>
+  <Text style={styles.mitemRate}>{item.price}</Text>
   {/* <Image source={require('./assets/dot.png')} style={styles.dotImage} /> */}
   </View>
   <View style={styles.ratingsContainer}>
     <Image source={require('./assets/rate.png')} style={styles.starImage} />
-    <Text style={styles.itemRate}>{item.rating}</Text>
+    <Text style={styles.mitemRat}>{item.rating}</Text>
     {/* <Text style={styles.itemMin}>{' . '}{item.min}</Text> */}
   </View>
-  <Text style={styles.resitemDescription}>{item.description}</Text>
+  <ShowMoreText description={item.description} />
   </View>
-          <View style={styles.resitemImageContainer}>
+          <View style={styles.mresitemImageContainer}>
             <ImageBackground source={item.imageSource} style={styles.resitemImage}>
             <View style={styles.labelContainer}>
                 <Image source={require('./assets/save.png')} style={styles.labelImage} />

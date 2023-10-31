@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
   scrollContent: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginBottom: 20,
   },
   touchableOpacity: {
     // width: 75, borderWidth: 1,
@@ -149,15 +150,26 @@ const styles = StyleSheet.create({
     // backgroundColor: 'white',
   },
   resitemImageContainer: {
+    marginTop:10,
     borderRadius: 10,
     overflow: 'hidden',
     position: 'relative',
-    height: 135,
+    height: 115,
+    right: 5,
+    resizeMode: 'contain',
+  },
+  mresitemImageContainer: {
+    marginTop:30,
+    borderRadius: 10,
+    overflow: 'hidden',
+    position: 'relative',
+    height: 115,
+    right: 5,
     resizeMode: 'contain',
   },
   resitemImage: {
-    width: 100, // Adjust as needed
-    height: 135, // Adjust as needed
+    width: 110, // Adjust as needed
+    height: 115, // Adjust as needed
     resizeMode: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
@@ -184,13 +196,16 @@ const styles = StyleSheet.create({
   },
   addToCartContainer: {
     position: 'absolute',
-    bottom: -5, // Adjust as needed
-    left: 278, // Adjust as needed
+    bottom: 5, // Adjust as needed
+    left: 270, // Adjust as needed
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#ededeb',
-    paddingVertical: 5,
-    paddingHorizontal: 10,
+    backgroundColor: 'white',
+    // paddingVertical: 5,
+    paddingHorizontal: 7,
+    borderColor: 'grey',
+    borderWidth: 1,
+    height:30,
     borderRadius: 5,
   },
   
@@ -209,6 +224,11 @@ const styles = StyleSheet.create({
   },
   resitemName: {
     fontSize: 16,
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  mresitemName: {
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'black',
   },
@@ -282,6 +302,14 @@ const styles = StyleSheet.create({
   },
   itemRate: {
     fontSize: 10,
+    color: 'black',
+  },
+  mitemRate: {
+    fontSize: 14,
+    color: 'black',
+  },
+  mitemRat: {
+    fontSize: 13,
     color: 'black',
   },
   itemMin: {
