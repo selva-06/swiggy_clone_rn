@@ -6,9 +6,11 @@ import {
     restaurantData,
     itemsData,
     trustedData,
+    bevdata,
   } from './screens/data';
   import ScrollComponent from './ScrollCOmponenttouch';
   import RestaurantData from './RestaurantDataMenuCard';
+import RestBev from './RestBev';
 
 
 const Rest = ({navigation}) => {
@@ -41,7 +43,8 @@ const Rest = ({navigation}) => {
 
             <ScrollComponent />
             <Text style={styles.infoTitle}>67 restaurants to explore</Text>
-            <RestaurantData restaurantData={restaurantData} />
+            {/* <RestaurantData restaurantData={restaurantData} /> */}
+            <RestBev bevdata={bevdata} />
             </View>
         </View>
 </ScrollView>  );

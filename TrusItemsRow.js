@@ -15,7 +15,7 @@ const TrusItemsRow = ({ data }) => {
                 <Image source={require('./assets/save.png')} style={styles.labelImage} />
               </View>
               <View style={styles.heartContainer}>
-                <Image source={require('./assets/heart.png')} style={styles.heartImage} />
+                <Image source={require('./assets/heart1.png')} style={styles.heartImage} />
               </View>
               {/* Gradient overlay for adText */}
                             <LinearGradient
@@ -79,22 +79,25 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: 10,
-    marginHorizontal: 5,
+    marginHorizontal: 10,
   },
   itemWrapper: {
     width: '30%',
-    marginHorizontal: 5,
     marginBottom: 0,
+    paddingHorizontal: 5,
+    marginRight: 0,
+
   },
   itemContainer: {
     borderRadius: 20,
     overflow: 'hidden',
     marginBottom: 10,
+    width: "110%",
     position: 'relative',
   },
   itemImage: {
     width: '100%',
-    height: 130,
+    height: 120,
     resizeMode: 'center',
     borderColor: 'white', // Add border color here
     borderWidth: 1, // 
@@ -104,7 +107,7 @@ const styles = {
     bottom: 0,
     left: 0,
     right: 0,
-    height: 50, // Adjust this value to control the height of the gradient overlay
+    height: 90, // Adjust this value to control the height of the gradient overlay
     justifyContent: 'flex-end',
   },
   overlayContent: {

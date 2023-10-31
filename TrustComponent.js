@@ -6,13 +6,14 @@ import TrusItemsRow from './TrusItemsRow';
 import { trustedData } from './screens/data';
 const TrustComponent = () => {
   return (
-    <View style={{ margin: 10, marginTop: 20 }}>
+    <View style={{  marginTop: 20 }}>
       <Text
         style={{
           fontSize: 18,
           fontWeight: 'bold',
           color: 'black',
           marginBottom: 5,
+          marginLeft:10,
         }}
       >
         Trusted picks for you!!

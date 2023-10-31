@@ -3,10 +3,10 @@ import React from 'react';
 import { Text, View, ImageBackground, Image } from 'react-native';
 import styles from './ScreenStyles';
 import LinearGradient from 'react-native-linear-gradient';
-const RestaurantData = ({ restaurantData }) => {
+const RestBev = ({ bevdata }) => {
   return (
     <>
-      {restaurantData.map((item, index) => (
+      {bevdata.map((item, index) => (
         <View style={styles.restaurantItem} key={index}>
           <View style={styles.resitemImageContainer}>
             <ImageBackground source={item.imageSource} style={styles.resitemImage}>
@@ -84,4 +84,4 @@ style={{borderRadius: 5}}
   );
 };
 
-export default RestaurantData;
+export default RestBev;

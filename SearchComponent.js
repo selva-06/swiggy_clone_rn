@@ -35,11 +35,12 @@ const styles = {
     margin: 10,
     borderWidth: 1,
     justifyContent: 'space-between',
-    borderRadius: 20,
+    borderRadius: 12,
     padding: 10,
     borderColor: '#f0f0f0',
     position: 'relative',
     marginTop: 20,
+    height:"1.5%",
     backgroundColor: '#f0f0f0',
   },
   textInput: {

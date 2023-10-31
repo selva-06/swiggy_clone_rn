@@ -34,6 +34,7 @@ const MenuRest = ({ menuData }) => {
     
     <>
       {menuData.map((item, index) => (
+              <View key={index} style={{ borderBottomColor: '#e6e6e6', borderBottomWidth: 1 }}>
         <View style={styles.restaurantItem} key={index}>
             <View style={styles.resitemDetails}>
                 <View style={{flexDirection:'column'}}>
@@ -91,6 +92,7 @@ const MenuRest = ({ menuData }) => {
       <Text style={styles.addToCartText}> ADD </Text>
     </View>
 
+
           {/* <View style={styles.resitemDetails}>
             <View style={{flexDirection: 'row'}}>
   <Text style={styles.resitemName}>{item.name}</Text>
@@ -124,7 +126,7 @@ style={{borderRadius: 5}}
     </View>
   </LinearGradient> */}
 </View>
-// </View>
+</View>
       ))}
     </>
   );

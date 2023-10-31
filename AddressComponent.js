@@ -8,8 +8,8 @@ const AddressComponent = () => {
       <Image
         source={require('./assets/address.png')}
         style={{
-          width: "12%",
-          height: "35%",
+          width: "10%",
+          height: "25%",
           position: 'absolute',
           zIndex: 1,
           resizeMode: 'contain',
@@ -17,12 +17,7 @@ const AddressComponent = () => {
         }}
       />
       <Text style={styles.addressTitle}>
-        Address{' '}
-        <Text>{'\u25BC'}</Text>
-        {/* <Image
-          source={require('./assets/drop.png')}
-          style={styles.dropImage}
-        />{' '} */}
+        Address{'\u25BC'}
       </Text>
       <Text style={styles.addressText}>
         445/2/1, Anna Cross Street, Ranipet - 632401
@@ -33,11 +28,11 @@ const AddressComponent = () => {
 
 const styles = {
   addressTitle: {
-    fontSize: 18,
-    marginBottom: 5,
-    fontWeight: 'bold',
+    fontSize: 16,
+    // marginBottom: 5,
+    fontWeight: '900',
     color: 'black',
-    marginLeft: 30,
+    marginLeft: 25,
     marginTop: 11,
 },
 //   dropImage: {
@@ -48,8 +43,10 @@ const styles = {
 //   },
   addressText: {
     color: 'grey',
-    marginLeft: 15,
+    marginLeft: 5,
     marginTop: 0,
+    fontWeight: '300',
+    fontSize: 12,
   },
 };
 

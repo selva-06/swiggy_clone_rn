@@ -89,13 +89,16 @@ const styles = StyleSheet.create({
   seeMoreButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop:5,
+    marginBottom: 5,
   },
   seeMoreText: {
     marginHorizontal: 10,
     color: 'orange',
     fontWeight: 'bold',
-    marginTop: 8,
-    marginBottom: 8,
+    fontSize: 16,
+    marginTop: 10,
+    marginBottom: 10,
   },
   vSymbol: {
     fontSize: 20,

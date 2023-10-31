@@ -15,7 +15,7 @@ const ItemsRow = ({ data }) => {
                 <Image source={require('./assets/save.png')} style={styles.labelImage} />
               </View>
               <View style={styles.heartContainer}>
-                <Image source={require('./assets/heart.png')} style={styles.heartImage} />
+                <Image source={require('./assets/heart1.png')} style={styles.heartImage} />
               </View>
               {/* Gradient overlay for adText */}
                             <LinearGradient
@@ -94,7 +94,7 @@ const styles = {
   },
   itemImage: {
     width: '100%',
-    height: 130,
+    height: 120,
     resizeMode: 'center',
     borderColor: 'white', // Add border color here
     borderWidth: 1, // 
@@ -104,7 +104,7 @@ const styles = {
     bottom: 0,
     left: 0,
     right: 0,
-    height: 50, // Adjust this value to control the height of the gradient overlay
+    height: 80, // Adjust this value to control the height of the gradient overlay
     justifyContent: 'flex-end',
   },
   overlayContent: {
@@ -131,20 +131,20 @@ const styles = {
     backgroundColor: 'white',
   },
   itemName: {
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: 'bold',
     color: 'black',
   },
   itemRate: {
-    fontSize: 10,
+    fontSize: 11,
     color: 'black',
   },
   itemMin: {
-    fontSize: 10,
+    fontSize: 11,
     color: 'black',
   },
   itemType: {
-    fontSize: 10,
+    fontSize: 12,
     color: '#919091',
   },
   ratingsContainer: {

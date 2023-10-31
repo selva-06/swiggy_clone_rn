@@ -21,7 +21,7 @@ const MindSection = ({ scrolldata, navigation }) => {
         contentContainerStyle={{
           flexDirection: 'row',
           flexWrap: 'wrap',
-          width: '290%',
+          width: '200%',
         }}
       >
         {scrolldata.map((item, index) => (
@@ -33,7 +33,7 @@ const MindSection = ({ scrolldata, navigation }) => {
               style={{
                 width: item.width,
                 height: item.height,
-                marginLeft: 30,
+                marginLeft: 10,
                 marginTop: 20,
                 marginRight: 20,
                 marginBottom: 10,
@@ -46,7 +46,7 @@ const MindSection = ({ scrolldata, navigation }) => {
             </TouchableOpacity>
             <Text style={{ textAlign: 'center', fontWeight: 'bold', color: '#919091' }}>{item.name}</Text>
     </View>
-            {(index + 1) % 6 === 0 && <View style={{ width: '100%', height: 10 }} />}
+            {(index + 1) % 6 === 0 && <View style={{ width: '100%', height: 2 }} />}
           </React.Fragment>
         ))}
       </ScrollView>

@@ -35,7 +35,7 @@ const Icarousel = ({navigation}) => {
           />
           <Image
             style={styles.icon}
-            source={require('./assets/heart.png')} // Replace with your second icon path
+            source={require('./assets/heart1.png')} // Replace with your second icon path
           />
         </View>
       </View>
@@ -105,7 +105,15 @@ style={{borderRadius: 20}}
   </View>
   <MenuSearch searchText={searchText} setSearchText={setSearchText}/>
   <MenuScroll />
+  <View style={{ borderBottomColor: '#e6e6e6', borderBottomWidth: 1 , marginBottom: 10 }}/>
+  <Text style = {{color:'black', fontSize: 18, fontWeight: 800, marginBottom: 20, marginLeft:8}}>Recommended (6)</Text>
   <MenuRest menuData={menuData}/>
+  <View>
+    <Text>{'\n'}</Text>
+</View>
+<View>
+    <Text>{'\n'}</Text>
+</View>
   </ScrollView>
 
 

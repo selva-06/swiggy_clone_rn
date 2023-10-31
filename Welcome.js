@@ -74,19 +74,25 @@ const Appi = ({navigation}) => {
       {/* <GradientComponent /> */}
       <AddressComponent />
       <SearchComponent searchText={searchText} setSearchText={setSearchText} />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+        <View style={{flexDirection:'column', alignItems: 'center'}}>
         <TextFieldComponent
-          text={{upperText: '', lowerText: ''}}
-          imagePath={require('./assets/mealoffer.png')}
+          imagePath={require('./assets/off1.png')}
         />
+        <Text style={{color:'black'}}>Special Offer</Text>
+        </View>
+        <View style={{flexDirection:'column', alignItems: 'center'}}>
         <TextFieldComponent
-          text={{upperText: '', lowerText: ''}}
-          imagePath={require('./assets/uoffer.png')}
+          imagePath={require('./assets/dosa.png')}
         />
+        <Text style={{color:'black'}}>Madarasi</Text>
+        </View>
+        <View style={{flexDirection:'column', alignItems: 'center'}}>
         <TextFieldComponent
-          text={{upperText: '', lowerText: ''}}
-          imagePath={require('./assets/mealoffer.png')}
+          imagePath={require('./assets/cof.png')}
         />
+        <Text style={{color:'black'}}>Beverages</Text>
+        </View>
       </View>
       <MyCarousel navigation={navigation} />
       <TrustComponent />

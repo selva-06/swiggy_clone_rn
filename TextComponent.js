@@ -2,25 +2,29 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 
-const TextFieldComponent = ({ text, imagePath }) => {
+const TextFieldComponent = ({imagePath }) => {
   return (
     <View
       style={{
         flex: 1,
         backgroundColor: '#e6e6e6',
-        borderRadius: 10,
+        borderRadius: 15,
         overflow: 'hidden',
         height: 80,
-        width: 75,
+        width: 100,
         paddingHorizontal: 10,
         margin: 10,
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 10,
       }}>
-      <Text>
+      {/* <Text> */}
+        {/* <Text>{'\n'}</Text>
         <Text>{'\n'}</Text>
-        <Text
+        <Text>{'\n'}</Text>
+        <Text>{'\n'}</Text> */}
+
+        {/* <Text
           style={{
             paddingTop: 10,
             fontSize: 10,
@@ -40,13 +44,13 @@ const TextFieldComponent = ({ text, imagePath }) => {
           }}>
           {text.lowerText}
         </Text>
-      </Text>
+      </Text> */}
       <Image
         source={imagePath}
         style={{
           width: 80,
           height: '100%',
-          resizeMode: 'cover',
+          resizeMode: 'contain',
         }}
       />
     </View>
