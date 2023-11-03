@@ -72,7 +72,7 @@ const Appi = ({navigation}) => {
   return (
     <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
       {/* <GradientComponent /> */}
-      <AddressComponent />
+      <AddressComponent navigation={navigation} />
       <SearchComponent searchText={searchText} setSearchText={setSearchText} />
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
         <View style={{flexDirection:'column', alignItems: 'center'}}>

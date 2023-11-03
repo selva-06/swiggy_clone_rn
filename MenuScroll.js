@@ -19,13 +19,13 @@ const MenuScroll = () => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}>
         <TouchableOpacity onPress={toggleSwitch} style={{marginTop: 30, marginLeft: 10,}}>
-        <View style={{ backgroundColor: isEnabled ? '#cfb4b8' : '#ccc', height: 20, width: 50, borderRadius: 10 }}>
+        <View style={{ backgroundColor: isEnabled ? '#b55c48' : 'white',borderColor:'#ccc',borderWidth:1, height: 20, width: 50, borderRadius: 10 }}>
           <Image source={require('./assets/nv.png')} style={{ width: 20, height: 15, position: 'absolute', left: isEnabled ? '50%' : 0 , marginTop: 2, resizeMode: 'contain'}} />
         </View>
         <Text>{isEnabled ? 'On' : 'Off'}</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={toggleSwitcha} style={{marginTop: 30, marginLeft: 10,}}>
-        <View style={{ backgroundColor: isEnableda ? '#a5c9ac' : '#ccc', height: 20, width: 50, borderRadius: 10 }}>
+        <View style={{ backgroundColor: isEnableda ? '#32a662' : 'white',borderColor:'#ccc',borderWidth:1, height: 20, width: 50, borderRadius: 10 }}>
           <Image source={require('./assets/v.png')} style={{ width: 20, height: 15, position: 'absolute', left: isEnableda ? '50%' : 0, resizeMode: 'contain', marginTop: 2, }} />
         </View>
         <Text>{isEnableda ? 'On' : 'Off'}</Text>

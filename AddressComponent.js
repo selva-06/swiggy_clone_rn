@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
-const AddressComponent = () => {
+const AddressComponent = ({navigation}) => {
   return (
     <View>
       <Image
@@ -16,9 +16,11 @@ const AddressComponent = () => {
           marginTop: 16,
         }}
       />
+      <TouchableOpacity onPress={()=>{navigation.navigate("Location")}}>
       <Text style={styles.addressTitle}>
         Address{'\u25BC'}
       </Text>
+      </TouchableOpacity>
       <Text style={styles.addressText}>
         445/2/1, Anna Cross Street, Ranipet - 632401
       </Text>

@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   seeMoreText: {
     marginHorizontal: 10,
-    color: 'orange',
+    color: '#f56c22',
     fontWeight: 'bold',
     fontSize: 16,
     marginTop: 10,
